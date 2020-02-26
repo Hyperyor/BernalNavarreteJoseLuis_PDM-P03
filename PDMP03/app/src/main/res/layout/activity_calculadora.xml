@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Calculadora">
+    tools:context=".ActividadCalculos">
 
 
     <TextView
@@ -193,56 +193,53 @@
         android:textSize="10sp" />
 
     <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonDot"
-        android:layout_marginTop="0dp"
-        android:text="Button"
-        android:textSize="8sp" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonZero"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_toEndOf="@+id/button7"
-        android:layout_toRightOf="@+id/button7"
-        android:text="Button"
-        android:textSize="8sp" />
-
-    <Button
         android:id="@+id/botonCrearClave"
         android:layout_width="88dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonEqual"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
+        android:layout_below="@+id/buttonZero"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
         android:layout_toStartOf="@+id/buttonClear"
         android:layout_toLeftOf="@+id/buttonClear"
-        android:layout_toEndOf="@+id/button8"
-        android:layout_toRightOf="@+id/button8"
         android:text="Crear Clave"
         android:textSize="8sp" />
 
     <Button
         android:id="@+id/botonSalir"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button8"
+        android:layout_below="@+id/buttonClear"
         android:layout_alignEnd="@+id/buttonClear"
         android:layout_alignRight="@+id/buttonClear"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="175dp"
-        android:layout_marginRight="175dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_toEndOf="@+id/spinnerMetodo"
+        android:layout_toRightOf="@+id/spinnerMetodo"
         android:onClick="atras"
-        android:text="Salir" />
+        android:text="Salir"
+        android:textSize="8sp" />
+
+    <Spinner
+        android:id="@+id/spinnerPotencia"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonDot"
+        android:layout_marginTop="67dp" />
+
+    <Spinner
+        android:id="@+id/spinnerMetodo"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonEqual"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="67dp"
+        android:layout_toEndOf="@+id/spinnerPotencia"
+        android:layout_toRightOf="@+id/spinnerPotencia" />
 
 
 </RelativeLayout>

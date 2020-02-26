@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void cambiarACalculadora(View v)
     {
-        Intent intentCalculadora = new Intent(MainActivity.this, Calculadora.class);
+        Intent intentCalculadora = new Intent(MainActivity.this, ActividadCalculos.class);
 
         startActivity(intentCalculadora);
     }
