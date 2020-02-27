@@ -32,6 +32,7 @@ public class ActividadCalculos extends AppCompatActivity {
     private Button bC;
 
     private TextView datos;
+    private TextView finalMsg=null;
 
     private Calculadora calculadora;
 
@@ -39,11 +40,16 @@ public class ActividadCalculos extends AppCompatActivity {
 
     private Spinner metodos;
 
+    private GeneradorClaves generador;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculadora);
+
+        finalMsg = (TextView)findViewById(R.id.textView2);
 
         calculadora = new Calculadora();
 
@@ -293,6 +299,16 @@ public class ActividadCalculos extends AppCompatActivity {
     {
         Intent intentVolver = new Intent(ActividadCalculos.this, MainActivity.class);
         startActivity(intentVolver);
+    }
+
+    public void generarClave(View v)
+    {
+        generador = new GeneradorClaves(potencias.getSelectedItem().toString(), metodos.getSelectedItem().toString());
+
+       generador.calcular(finalMsg);
+
+
+        //finalMsg.setText(mensaje);
     }
 
 

@@ -202,6 +202,7 @@
         android:layout_marginRight="88dp"
         android:layout_toStartOf="@+id/buttonClear"
         android:layout_toLeftOf="@+id/buttonClear"
+        android:onClick="generarClave"
         android:text="Crear Clave"
         android:textSize="8sp" />
 
@@ -240,6 +241,17 @@
         android:layout_marginTop="67dp"
         android:layout_toEndOf="@+id/spinnerPotencia"
         android:layout_toRightOf="@+id/spinnerPotencia" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerMetodo"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginRight="109dp"
+        android:layout_toStartOf="@+id/botonSalir"
+        android:layout_toLeftOf="@+id/botonSalir" />
 
 
 </RelativeLayout>
