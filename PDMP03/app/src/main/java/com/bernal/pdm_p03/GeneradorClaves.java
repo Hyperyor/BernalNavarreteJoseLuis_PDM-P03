@@ -4,7 +4,14 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.math.BigInteger;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class GeneradorClaves {
@@ -19,8 +26,11 @@ public class GeneradorClaves {
     private long segundos;
     private long milis;
 
+    private DatabaseReference rootReference;
+
     public GeneradorClaves(String potencia, String metodo)
     {
+        rootReference = FirebaseDatabase.getInstance().getReference();
         tamClave = Integer.parseInt(potencia);
         this.metodo = metodo;
 
@@ -63,6 +73,8 @@ public class GeneradorClaves {
 
         mensaje += "Clave Generada en "+segundos+":"+milis+" en main" ;
 
+        subirDatosBD();
+
         return mensaje;
     }
 
@@ -82,6 +94,7 @@ public class GeneradorClaves {
 
                         milis = time%1000;
                         finalMsg.setText("Clave Generada en "+segundos+":"+milis+" en thrad" );
+                        subirDatosBD();
                     }
                 });
 
@@ -104,6 +117,7 @@ public class GeneradorClaves {
 
             milis = time%1000;
             finalMsg.setText("Clave Generada en "+segundos+":"+milis+" en asynctask" );
+            subirDatosBD();
             //Log.d("ThreadANR","onPostExecute");
 
         }
@@ -143,5 +157,20 @@ public class GeneradorClaves {
                 (e.gcd(totient).compareTo(BigInteger.valueOf(1)) != 0));
         // d = e^1 mod totient
         d = e.modInverse(totient);
+    }
+
+    private void subirDatosBD()
+    {
+        String tiempo = "" + segundos + ":" + milis;
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String fechaComoCadena = sdf.format(new Date());
+
+        Map<String, Object> datosClave = new HashMap<>();
+        datosClave.put("metodo", metodo);
+        datosClave.put("tiempo", tiempo);
+        datosClave.put("fecha", fechaComoCadena);
+
+        rootReference.child("DatosGeneracion").push().setValue(datosClave);
     }
 }

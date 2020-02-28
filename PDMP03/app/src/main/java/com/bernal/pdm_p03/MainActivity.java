@@ -20,4 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intentCalculadora);
     }
+
+    public void cambiarAListado(View v)
+    {
+        Intent intentList = new Intent(MainActivity.this, Listado.class);
+
+        startActivity(intentList);
+    }
 }
