@@ -241,7 +241,7 @@ public class ActividadCalculos extends AppCompatActivity {
     private void darDatosSpinner()
     {
         final String[] datosPotencias =
-                new String[]{"512","1024","2048","4096","16384"};
+                new String[]{"512","1024","2048","4096"};
 
         ArrayAdapter<String> adaptador =
                 new ArrayAdapter<String>(this,

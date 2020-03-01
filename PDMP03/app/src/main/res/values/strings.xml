@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PDM-P03</string>
+    <string name="BotonCalculadora">Calculator</string>
+    <string name="BotonListado">List generated keys</string>
+    <string name="BotonGaleria">Gallery</string>
+    <string name="BotonSalir">Exit</string>
+    <string name="BotonGenerarClave">Generate key</string>
 </resources>

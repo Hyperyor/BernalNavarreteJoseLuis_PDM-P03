@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PDM-P03</string>
+    <string name="BotonCalculadora">Calculadora</string>
+    <string name="BotonListado">Listado de claves generadas</string>
+    <string name="BotonGaleria">Galeria</string>
+    <string name="BotonSalir">Salir</string>
+    <string name="BotonGenerarClave">Generar clave</string>
+</resources>

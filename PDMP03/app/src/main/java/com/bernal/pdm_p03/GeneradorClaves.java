@@ -9,7 +9,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -165,6 +167,16 @@ public class GeneradorClaves {
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String fechaComoCadena = sdf.format(new Date());
+
+        Calendar calendario = new GregorianCalendar();
+
+        int hora, minutos;
+
+        hora = calendario.get(Calendar.HOUR_OF_DAY);
+
+        minutos = calendario.get(Calendar.MINUTE);
+
+        fechaComoCadena += " " + hora + ":" + minutos;
 
         Map<String, Object> datosClave = new HashMap<>();
         datosClave.put("metodo", metodo);

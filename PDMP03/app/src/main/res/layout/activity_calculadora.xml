@@ -203,7 +203,7 @@
         android:layout_toStartOf="@+id/buttonClear"
         android:layout_toLeftOf="@+id/buttonClear"
         android:onClick="generarClave"
-        android:text="Crear Clave"
+        android:text="@string/BotonGenerarClave"
         android:textSize="8sp" />
 
     <Button
@@ -221,7 +221,7 @@
         android:layout_toEndOf="@+id/spinnerMetodo"
         android:layout_toRightOf="@+id/spinnerMetodo"
         android:onClick="atras"
-        android:text="Salir"
+        android:text="@string/BotonSalir"
         android:textSize="8sp" />
 
     <Spinner
